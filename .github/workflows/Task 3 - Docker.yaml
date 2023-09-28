@@ -9,7 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       defaults:
         run:
-          working-directory: ./
+          working-directory: ./Task 3 - GithubActions && Docker
       
       steps:
           - uses: actions/checkout@v3
@@ -25,6 +25,6 @@ jobs:
 
           - name: Rubn Bash Script
             run: |
-              bash ./"Docker_Script.sh"
+              bash Docker_Script.sh
 
           - run: echo "Action && Job Completed!"
