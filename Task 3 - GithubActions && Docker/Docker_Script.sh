@@ -1,0 +1,1 @@
+docker pull salehahmad11/app.py:latest
