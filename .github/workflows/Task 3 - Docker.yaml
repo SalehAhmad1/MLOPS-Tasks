@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  Docker_Image_Setup:
       runs-on: ubuntu-latest
       defaults:
         run:
@@ -27,4 +27,4 @@ jobs:
             run: |
               bash Docker_Script.sh
 
-          - run: echo "Action && Job Completed!"
+          - run: echo "Docker Image Pulled from HUB that was pushed in Task 2!"
