@@ -2,7 +2,7 @@ name: Setup Docker Container && Image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test:
