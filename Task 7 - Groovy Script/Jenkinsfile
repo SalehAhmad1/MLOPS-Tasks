@@ -4,30 +4,36 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout your Git repository
+                // Check out the Git repository
                 script {
-                    def scmVars = checkout scm
+                    checkout scm
                 }
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                script {
-                    // Set up a Python environment and install dependencies
-                    def pythonEnv = tool name: 'Python3', type: 'hudson.plugins.python.PythonInstallation'
-                    sh "pip install -r ./"Task 7 - Groovy Script"/requirements.txt --break-system-packages"
-                }
+                // Use a Python environment with pip installed
+                sh 'pip install -r ./"Task 7 - Groovy Script"/requirements.txt --break-system-packages'
             }
         }
 
         stage('Run Tests') {
             steps {
-                script {
-                    // Execute the Python script
-                    sh "python3 ./"Task 7 - Groovy Script"/test.py"
-                }
+                // Run your Python test script
+                sh 'python3 ./"Task 7 - Groovy Script"/test.py'
             }
+        }
+    }
+
+    post {
+        success {
+            // This block is executed if the pipeline is successful
+            echo 'Pipeline completed successfully'
+        }
+        failure {
+            // This block is executed if the pipeline fails
+            echo 'Pipeline failed'
         }
     }
 }
