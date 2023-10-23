@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Execute the Python script
-                    sh "python ./"Task 7 - Groovy Script"/test.py"
+                    sh "python3 ./"Task 7 - Groovy Script"/test.py"
                 }
             }
         }
