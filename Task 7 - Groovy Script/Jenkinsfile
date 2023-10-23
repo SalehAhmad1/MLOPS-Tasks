@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your Git repository
+                script {
+                    def scmVars = checkout scm
+                }
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Set up a Python environment and install dependencies
+                    def pythonEnv = tool name: 'Python3', type: 'hudson.plugins.python.PythonInstallation'
+                    sh "pip install -r ./"Task 7 - Groovy Script"/requirements.txt --break-system-packages"
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Execute the Python script
+                    sh "python ./"Task 7 - Groovy Script"/test.py"
+                }
+            }
+        }
+    }
+}
