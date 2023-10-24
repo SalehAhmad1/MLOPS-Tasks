@@ -4,12 +4,12 @@ def checkoutCode(String repoUrl, String branch) {
 
 def buildProject() {
     echo 'Building'
-    bat 'pip install -r ./Task 7 - Groovy Script/requirements.txt --break-system-packages'
+    sh 'pip install -r ./Task 7 - Groovy Script/requirements.txt --break-system-packages'
 }
 
 def runTests() {
     echo 'Test'
-    bat 'python3 ./Task 7 - Groovy Script/test.py'
+    sh 'python3 ./Task 7 - Groovy Script/test.py'
 }
 
 def deployApplication() {
