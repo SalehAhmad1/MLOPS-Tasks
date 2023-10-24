@@ -1,8 +1,5 @@
-install: 
-	pip install -r requirements.txt
+install:
+		pip install -r requirements.txt
 
 test:
-	pytest test.py
-
-hello:
-	echo "Hello World"
+		python -m pytest test.py

@@ -1,10 +1,17 @@
-from python import *
+from main import Bulb
+
+bulb = Bulb()
+
+def test_bulb_status():
+    assert bulb.getStatus() == "Bulb is not glowing"
 
 
-def test_sum_test():
-    assert(sum(2,1)==3)
-    
+def test_bulb_on():
+    bulb.isOn()
+    assert bulb.getStatus() == "Bulb is glowing"
 
-test_sum_test()
-print("All tests passed!")
+def test_bulb_off():
+    bulb.isOff()
+    assert bulb.getStatus() == "Bulb is glowing"
+
 
