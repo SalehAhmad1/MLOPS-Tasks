@@ -7,7 +7,7 @@ pipeline {
         stage('Load Functions') {
             steps {
                 script {
-                    customFunctions = load './"Task 7 - Groovy Script"/jenkinsFunctions.groovy'
+                    customFunctions = load './Task 7 - Groovy Script/jenkinsFunctions.groovy'
                 }
             }
         }
