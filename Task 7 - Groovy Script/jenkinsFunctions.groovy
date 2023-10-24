@@ -4,16 +4,16 @@ def checkoutCode(String repoUrl, String branch) {
 
 def buildProject() {
     echo 'Building'
-    bat 'pip3 install -r requirements.txt'
+    bat 'pip install -r ./"Task 7 - Groovy Script"/requirements.txt --break-system-packages'
 }
 
 def runTests() {
     echo 'Test'
-    bat 'python test.py'
+    bat 'python3 ./"Task 7 - Groovy Script"/test.py'
 }
 
 def deployApplication() {
-    echo 'Deploy'
+    echo 'Deploying'
 }
 
 return this
